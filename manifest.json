@@ -1,0 +1,28 @@
+{
+  "name": "Switcheroo",
+  "version": "1.0",
+  "description": "Change any word/sentence on a web page with another one.",
+  "permissions": ["activeTab", "storage"],
+  "browser_action": {
+    "default_popup": "src/switcheroo.html",
+    "default_icon": {
+      "16": "resources/img/icon16.png",
+      "32": "resources/img/icon32.png",
+      "48": "resources/img/icon48.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/changeText.js"]
+    }
+  ],
+  "manifest_version": 2,
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "addon@example.com",
+      "strict_min_version": "42.0"
+    }
+  }
+
+}
