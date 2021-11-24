@@ -49,15 +49,15 @@
     transition: .4s;
 }
 
-input:checked + .slider {
+input:checked ~ .slider {
     background-color: #2196F3;
 }
 
-input:focus + .slider {
+input:focus ~ .slider {
     box-shadow: 0 0 1px #2196F3;
 }
 
-input:checked + .slider:before {
+input:checked ~ .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
@@ -69,4 +69,48 @@ input:checked + .slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+#mainContent{
+    margin-top: 20px;
+}
+
+#addRuleButtonParent{
+    display: flex;
+    justify-content: center;
+}
+
+#addRuleButton{
+    border-radius: 4px;
+    font-weight: 400;
+    width: 100px;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    color: white;
+    background: #39a1f4;
+    margin-top: 25px;
+    cursor: pointer;
+    font-family: Tahoma, serif;
+}
+
+.switch.small{
+    width: 40px;
+    height: 19px;
+}
+
+.small.slider:before{
+    width: 13px;
+    height: 13px;
+}
+
+input:checked + .small.slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+}
+
+table input[type="text"]{
+    width: 100px;
 }

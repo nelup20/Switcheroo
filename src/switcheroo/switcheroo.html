@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-    scale=1.0">
+    <title>Switcheroo</title>
+    <link rel="stylesheet" href="switcheroo.css" />
+</head>
+<body>
+    <div id="switcherooMain">
+        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <h1 id="switcherooHeader">Switcheroo <img src="../resources/img/icon32.png"></h1>
+        <label class="switch">
+            <input id="isActiveSwitch" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <div id="mainContent">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Word to replace</th>
+                    <th>Replacement</th>
+                    <th>Active</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>
+                        <label class="switch small">
+                            <input type="checkbox">
+                            <span class="slider small round"></span>
+                        </label>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <div id="addRuleButtonParent">
+                <button id="addRuleButton">Add rule</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="switcheroo.js"></script>
+</html>

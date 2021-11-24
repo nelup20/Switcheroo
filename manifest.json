@@ -4,17 +4,17 @@
   "description": "Change any word/sentence on a web page with another one.",
   "permissions": ["activeTab", "storage"],
   "browser_action": {
-    "default_popup": "src/switcheroo.html",
+    "default_popup": "src/switcheroo/switcheroo.html",
     "default_icon": {
-      "16": "resources/img/icon16.png",
-      "32": "resources/img/icon32.png",
-      "48": "resources/img/icon48.png"
+      "16": "src/resources/img/icon16.png",
+      "32": "src/resources/img/icon32.png",
+      "48": "src/resources/img/icon48.png"
     }
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["src/changeText.js"]
+      "js": ["src/switcheroo/changeText.js"]
     }
   ],
   "manifest_version": 2,
