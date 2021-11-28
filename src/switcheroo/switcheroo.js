@@ -5,7 +5,7 @@ const addRuleBtn = document.getElementById("addRuleButton");
 const table = document.getElementsByTagName("table")[0];
 
 let isActive = browser.storage.sync.get("switcherooActive").then(res => res.switcherooActive === undefined ? true : res.switcherooActive);
-let ruleCount = 1;
+let rows = [];
 
 isActiveSwitch.checked = isActive;
 
@@ -15,7 +15,9 @@ isActiveSwitch.addEventListener("change", e => {
     });
 })
 
-addRuleBtn.addEventListener("click", e => {
+addRuleBtn.addEventListener("click", addRow);
+
+function addRow(){
     let newRow = table.insertRow();
     let newCell1 = newRow.insertCell();
     let newCell2 = newRow.insertCell();
@@ -44,14 +46,22 @@ addRuleBtn.addEventListener("click", e => {
 
     let newDeleteBtn = document.createElement("button");
     newDeleteBtn.innerText = "Delete";
-    newDeleteBtn.addEventListener("click", e => {
-        let rowToDelete = e.target.parentNode.parentNode;
-        rowToDelete.parentNode.removeChild(rowToDelete);
-    });
+    newDeleteBtn.addEventListener("click", e => deleteRow(e.target.parentNode.parentNode));
 
     newCell1.appendChild(newCheckbox);
     newCell2.appendChild(newTextInput1);
     newCell3.appendChild(newTextInput2);
     newCell4.appendChild(newSwitchInput);
     newCell5.appendChild(newDeleteBtn);
-});
+
+    rows.push(newRow);
+
+    console.log(rows);
+}
+
+function deleteRow(rowToDelete){
+    rowToDelete.parentNode.removeChild(rowToDelete);
+    rows.splice(rows.findIndex(row => row === rowToDelete), 1);
+
+    console.log(rows);
+}
