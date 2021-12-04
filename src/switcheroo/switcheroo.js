@@ -55,13 +55,9 @@ function addRow(){
     newCell5.appendChild(newDeleteBtn);
 
     rows.push(newRow);
-
-    console.log(rows);
 }
 
 function deleteRow(rowToDelete){
     rowToDelete.parentNode.removeChild(rowToDelete);
     rows.splice(rows.findIndex(row => row === rowToDelete), 1);
-
-    console.log(rows);
 }
